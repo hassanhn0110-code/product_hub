@@ -2,7 +2,7 @@
 
 ## Current application
 
-ProductHub is a React application served by Vite. `frontend/src/main.jsx` mounts `App.jsx`, which displays the existing homepage and three products. Prices, categories, and icons remain in App.jsx. Styles are in `frontend/src/styles/`; static public files keep their existing URLs.
+ProductHub is a React application served by Vite. `frontend/src/main.jsx` mounts `App.jsx`, which displays the existing homepage and three products. Prices, categories, and icons remain in App.jsx. React useState holds the search input; trim() and toLowerCase() normalize it, and filter()/includes() match product names or categories. The clear button resets the query. A live status displays result counts or the no-results message. Styles are in `frontend/src/styles/`; static public files keep their existing URLs.
 
 Root npm scripts forward commands to `frontend` with npm's `--prefix` option. Dependencies are declared and locked only by the frontend package. The root package has no dependencies.
 
@@ -36,6 +36,6 @@ The root `.env.example` is a future configuration template. When Supabase is imp
 
 ## Preservation
 
-`original-files.json` records pre-refactor SHA-256 hashes for the original source and public assets. Only the two stylesheet import paths changed in the React source. The original Vite template README is preserved as `original-vite-readme.md`. The frontend package files and Vite/Oxlint configuration were moved without dependency changes.
+`original-files.json` records pre-refactor SHA-256 hashes for the original source and public assets. During the original refactor, only the two stylesheet import paths changed in React source. The subsequent search task intentionally added state/filtering/UI to App.jsx and styles to App.css. These hashes describe the historical pre-refactor files, not the current application. The original Vite template README is preserved as `original-vite-readme.md`. The frontend package files and Vite/Oxlint configuration were moved without dependency changes.
 
 The old root `node_modules` remains pending the owner's approval to remove it after verification. Never copy or manually move dependency directories. npm installs the frontend dependency tree from its lockfile, using the D: download cache.

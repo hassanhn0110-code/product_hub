@@ -1,10 +1,10 @@
 # ProductHub
 
-ProductHub is a demonstration electronics storefront built while learning full-stack web development. It includes a homepage, featured Samsung Galaxy, HP Laptop, and Wireless Headphones products, service information, and responsive styling. Product data is currently local; checkout and account features are future work.
+ProductHub is a demonstration electronics storefront built while learning full-stack web development. It includes a homepage, featured Samsung Galaxy, HP Laptop, and Wireless Headphones products, service information, and responsive styling. Live search matches product names and categories without regard to case or surrounding spaces. Clear search restores all products; unmatched queries show a no-results message. Product data is currently local; checkout and account features are future work.
 
 ## Technology
 
-React 19, JavaScript/JSX, Vite 8, CSS3, Node.js, npm, and Oxlint. Supabase is planned for PostgreSQL, authentication, and storage. Git/GitHub are planned for version control; nothing has been published.
+React 19, JavaScript/JSX, Vite 8, CSS3, Node.js, npm, and Oxlint. Supabase is planned for PostgreSQL, authentication, and storage. Git/GitHub provide version control; the application is published in the repository linked below. Supabase is not integrated.
 
 ## Structure
 
@@ -32,11 +32,16 @@ producthub/
 |-- docs/
 |   |-- architecture.md
 |   |-- original-files.json
-|   `-- original-vite-readme.md
+|   |-- original-vite-readme.md
+|   |-- verification.md
+|   `-- github-report.md
 |-- .env.example
 |-- .gitignore
 |-- .npmrc
 |-- package.json
+|-- AGENTS.md
+|-- check.md
+|-- publish-producthub.ps1
 `-- README.md
 ```
 
@@ -98,3 +103,9 @@ Repository: [hassanhn0110-code/product_hub](https://github.com/hassanhn0110-code
 The original root `node_modules` is temporarily retained for safety. New installs belong only in `frontend/node_modules`; dependencies have not been manually copied or moved. Remove the obsolete root directory only after successful verification and your explicit approval. Do not reinstall dependencies at the root.
 
 The root dev/build commands use Vite's native config loader to avoid a Windows process-permission error encountered with the default bundled config loader on this computer. The original frontend scripts, dependencies, and Vite config remain intact. Use the verified Node.js version above for these commands.
+
+## Verification status
+
+On 2026-11-03, lint, production build, Vite startup, and HTTP checks passed. Non-browser component checks passed name/category matching, case and whitespace handling, no-results output, empty input, and clear search. Visual appearance, actual browser interactions, and mobile layout have not been verified in a browser. See [verification](docs/verification.md).
+
+The GitHub repository already contains the application at commit `781d6ec`. The latest documentation synchronization status is recorded in [the GitHub report](docs/github-report.md) and `check.md`. The publishing helper is optional; it was inspected but not executed during this review. If Git reports an index or FETCH_HEAD access error inside an agent session, use your own PowerShell terminal rather than deleting Git metadata.
