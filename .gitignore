@@ -1,0 +1,42 @@
+# Dependencies and generated builds (at any depth)
+node_modules/
+dist/
+dist-ssr/
+coverage/
+
+# Environment files; examples are safe to track
+.env
+.env.*
+!.env.example
+!**/.env.example
+
+# Logs, caches and temporary files
+logs/
+*.log
+.cache/
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+
+# Editor and operating-system local files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.local
+
+# Private credentials
+*.pem
+*.key
+
+# Local verification artifacts
+.verification/

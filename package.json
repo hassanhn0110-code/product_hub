@@ -1,0 +1,11 @@
+{
+  "name": "producthub-project",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev -- --configLoader native",
+    "build": "npm --prefix frontend run build -- --configLoader native",
+    "lint": "npm --prefix frontend run lint",
+    "preview": "npm --prefix frontend run preview"
+  }
+}
